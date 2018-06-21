@@ -1,0 +1,1 @@
+# Faveo-Plugin-Template
