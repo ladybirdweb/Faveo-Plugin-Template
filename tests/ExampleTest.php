@@ -4,9 +4,9 @@ namespace App\Plugin\YourPluginName\Tests;
 
 use Tests\DBTestCase;
 
-class SomeCaseTest extends DBTestCase
+class ExampleTest extends DBTestCase
 {
-	public function test_demo()
+	public function test_example()
 	{
 		$this->assertTrue(true);
 	}

@@ -1,11 +1,5 @@
 {
-    "name": "ak403602/aaveo-plugin-template",
-    "authors": [
-        {
-            "name": "avinash kumar",
-            "email": "ak403602@gmail.com"
-        }
-    ],
+    "name": "Faveo-Plugin/{pluginName}",
     "scripts":{
         "test":"php ../../../vendor/phpunit/phpunit/phpunit",
         "group-test":"php ../../../vendor/phpunit/phpunit/phpunit --colors=always --group",
