@@ -6,6 +6,11 @@
             "email": "ak403602@gmail.com"
         }
     ],
+    "scripts":{
+        "test":"php ../../../vendor/phpunit/phpunit/phpunit",
+        "group-test":"php ../../../vendor/phpunit/phpunit/phpunit --colors=always --group",
+        "filter-test":"php ../../../vendor/phpunit/phpunit/phpunit --colors=always --filter"
+    },
     "require": {
     }
 }
