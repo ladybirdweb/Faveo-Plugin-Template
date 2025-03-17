@@ -1,26 +1,30 @@
-<?php 
+<?php
 
-// namespace App\Plugins\YourPluginName;
+namespace App\Plugins\TestPluginTemplate;
 
-use App\Plugins\ServiceProvider as CoreServiceProvider;
+use App\Plugins\SyncPluginToLatestVersion;
 
-class ServiceProvider extends CoreServiceProvider 
+class ServiceProvider extends \App\Plugins\ServiceProvider
 {
- 
- 	/**
- 	 * registers the plugin
- 	 * @return void
- 	 */
-    public function register()
-    {
-        // parent::register('yourPluginName');
-    }
- 
-
     public function boot()
     {
-        // parent::boot('yourPluginName');
+        (new SyncPluginToLatestVersion())->sync('TestPluginTemplate');
+
+        $trans = app_path('Plugins' . DIRECTORY_SEPARATOR . 'TestPluginTemplate' . DIRECTORY_SEPARATOR . 'lang');
+        $this->loadTranslationsFrom($trans, 'TestPluginTemplate');
+
+        $view_path = app_path('Plugins' . DIRECTORY_SEPARATOR . 'TestPluginTemplate' . DIRECTORY_SEPARATOR . 'views');
+        $this->loadViewsFrom($view_path, 'TestPluginTemplate');
+
+        if (class_exists('Breadcrumbs')) {
+            require __DIR__ . DIRECTORY_SEPARATOR . 'breadcrumbs.php';
+        }
+
+        parent::boot('TestPluginTemplate');
     }
 
-    //add more methods if required
+    public function register()
+    {
+        parent::register('TestPluginTemplate');
+    }
 }
