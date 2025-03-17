@@ -69,5 +69,3 @@ app
 - Facilitates modular development.
 - Enhances maintainability.
 - Ensures consistency across plugins.
-
----
